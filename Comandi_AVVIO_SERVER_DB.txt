@@ -1,0 +1,26 @@
+Download:
+https://www.enterprisedb.com/download-postgresql-binaries
+
+Installazione
+Crea una cartella data un livello sopra bin e imposta l'utente amministratore postgres senza password temporaneamente:
+initdb.exe -D ..\data -U postgres --auth=trust
+
+Avvio server Postgresql:
+C:\postgresql\bin\pg_ctl -D "..\data" -l file_log start
+
+per fermare: 
+C:\postgresql\bin\pg_ctl -D "..\data" -l file_log stop
+
+---bat START
+@echo off
+C:\postgresql\bin\pg_ctl -D "C:\postgresql\data" -l log_postgres.txt start
+echo Database in fase di avvio...
+pause
+
+
+---bat STOP	
+@echo off
+C:\postgresql\bin\pg_ctl -D "C:\postgresql\data" -l log_postgres.txt stop
+echo Database arrestato.
+pause
+
