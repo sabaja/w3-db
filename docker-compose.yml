@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: w3school-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: w3user
+      POSTGRES_PASSWORD: w3password
+      POSTGRES_DB: w3db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+      - ./init-db:/docker-entrypoint-initdb.d
+volumes:
+  postgres_data:
