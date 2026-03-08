@@ -529,14 +529,14 @@ INSERT INTO orders (orderid, customerid, employeeid, orderdate, shipperid) VALUE
 -- --------------------------------------------------------
 -- Table: order_details
 -- --------------------------------------------------------
-CREATE TABLE order_details (
+CREATE TABLE order_products (
     orderdetailid SERIAL PRIMARY KEY,
     orderid       INT DEFAULT NULL REFERENCES orders(orderid),
     productid     INT DEFAULT NULL REFERENCES products(productid),
     quantity      INT DEFAULT NULL
 );
 
-INSERT INTO order_details (orderdetailid, orderid, productid, quantity) VALUES
+INSERT INTO order_products (orderdetailid, orderid, productid, quantity) VALUES
 (1, 10248, 11, 12),(2, 10248, 42, 10),(3, 10248, 72, 5),
 (4, 10249, 14, 9),(5, 10249, 51, 40),
 (6, 10250, 41, 10),(7, 10250, 51, 35),(8, 10250, 65, 15),

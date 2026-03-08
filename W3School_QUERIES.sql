@@ -47,4 +47,4 @@ where c.country in (
 	)
 ) order by c.customername;
 
--- Per avere 
+
